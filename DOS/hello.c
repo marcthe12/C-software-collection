@@ -19,7 +19,6 @@ static void printstring(char* string){
 		printchar(string[x]);
 		x++;
 	}
-	
 }
 
 
