@@ -3,6 +3,6 @@
 
 int main()
 {
-	printf("\x1B[1;47;4;35mHello world\n\x1b[0m");
+	printf("Hello world\n");
 	return (0);
 }
