@@ -1,4 +1,4 @@
-#include <ncurses/ncurses.h>
+#include <ncurses.h>
 
 int main ()
 {
@@ -11,9 +11,6 @@ int main ()
 		switch(key)
 			case(KEY_UP)
 			case(KEY_DOWN)
-			
-		
-		
 	};
 	endwin();
 	return (0);

@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 2.8.9)
+project (curses)
+file(GLOB SOURCES "src/*.c")
+SET(CURSES_USE_NCURSES TRUE)
+find_package(Curses)
+
+if(CURSES_HAVE_NCURSES_H)
+	include_directories(${CURSES_INCLUDE_DIR})
+elseif(CURSES_HAVE_NCURSES_NCURSES_H)
+	include_directories(${CURSES_INCLUDE_DIR}/ncurses)
+endif()
+
+add_executable(curses ${SOURCES})
+target_link_libraries(curses ${CURSES_LIBRARIES})
