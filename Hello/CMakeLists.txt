@@ -1,6 +1,4 @@
 cmake_minimum_required(VERSION 2.8.9)
-include(cotire)
 project (hello)
 file(GLOB SOURCES "src/*.c")
 add_executable(hello ${SOURCES})
-cotire(hello)
