@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 2.8.9)
-project (hello)
+project (add)
 include_directories(include)
-
+file(GLOB LIBSRC "lib/*.c")
+add_library(add STATIC ${LIBSRC})
+link_directories(${MyProj_BINARY_DIR})
 file(GLOB SOURCES "src/*.c")
-add_executable(hello ${SOURCES})
+add_executable(addtest ${SOURCES})
+target_link_libraries(addtest libadd.a)
