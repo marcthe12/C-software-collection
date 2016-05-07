@@ -4,12 +4,12 @@ int main ()
 {
 	initscr();
 	noecho();
-	raw();
+	cbreak();
 	keypad(stdscr, TRUE);
-	int x,y;
-	int key=getch();
-	while(key != KEY_F(10)){
-		switch(key){
+	int x,y, keydata;
+	keydata=getch();
+	while(keydata != KEY_F(10)){
+		switch(keydata){
 			case(KEY_UP):
 				getyx(stdscr,y,x);
 				y--;
@@ -34,12 +34,23 @@ int main ()
 				move(y,x);
 				refresh();
 				break;
+			case(KEY_DC):
+				delch();
+				refresh();
+				break;
+			case(8):
+			case(KEY_BACKSPACE):
+				getyx(stdscr,y,x);
+				x--;
+				mvdelch(y,x);
+				refresh();
+				break;
 			default:
-				printw("%c",key);
+				addch(keydata);
 				refresh();
 				break;
 		};
-	key=getch();
+	keydata=getch();
 	};
 	endwin();
 	return (0);
