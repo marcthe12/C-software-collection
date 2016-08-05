@@ -10,6 +10,9 @@ int main ()
 	keydata=getch();
 	while(keydata != KEY_F(10)){
 		switch(keydata){
+			case(KEY_F(2)):
+				clear();
+				break;
 			case(KEY_UP):
 				getyx(stdscr,y,x);
 				y--;
@@ -34,6 +37,7 @@ int main ()
 				move(y,x);
 				refresh();
 				break;
+			case(127):
 			case(KEY_DC):
 				delch();
 				refresh();
