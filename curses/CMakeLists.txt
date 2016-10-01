@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.9)
-project (curses)
+project (curses C)
 file(GLOB SOURCES "src/*.c")
 find_package(Curses)
 SET(CURSES_NEED_NCURSES TRUE)
